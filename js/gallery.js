@@ -86,10 +86,10 @@ const markup = images
 gallery.insertAdjacentHTML('beforeend', markup);
 
 gallery.addEventListener('click', event => {
-  event.preventDefault();
   if (!event.target.classList.contains('gallery-image')) {
     return;
   }
+  event.preventDefault();
   const original = event.target.getAttribute('data-source');
   const alt = event.target.getAttribute('alt');
   const modal = basicLightbox.create(`<img src="${original}" alt="${alt}" />`);
